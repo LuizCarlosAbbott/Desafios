@@ -21,26 +21,29 @@
                 padding: 10px 5px;
                 overflow: hidden;
                 word-break: normal;
+                width: 100%;
             }
 
             .column_left {
                 float: left;
-                display: block;
+                display: inline-table;
                 height: 10%;
                 text-align: left;
                 margin: 0;
                 padding: 0;
-                width: 32vw;
+                width: 50%;
+
             }
 
             .column_right {
-                float: right;
-                display: block;
+                float: left;
+                display: inline-table;
                 height: 10%;
                 text-align: left;
                 margin: 0;
                 padding: 0;
-                width: 32vw;
+                width: 50%;
+
             }
 
             .actions a {
@@ -50,10 +53,6 @@
             td,
             th {
                 font-family: "Calibri ";
-            }
-
-            tr:nth-child(even) {
-                background-color: #ddd;
             }
 
             th {
@@ -68,25 +67,6 @@
 
 
         <table class="table">
-            <tbody class=column_right>
-                <tr>
-                    <td>
-                        <h3>Feitos</h3>
-                    </td>
-                </tr>
-                <?php foreach ($chamados as $chamado) : ?>
-                    <?php if ($chamado->feito) :  ?>
-                        <tr>
-                            <td class="actions column_right"><?= $this->Number->format($chamado->id) ?>)
-                                <?= $this->Html->link(
-                                    h($chamado->titulo),
-                                    ['action' => 'edit', $chamado->id]
-                                ) ?>
-                            </td>
-                        </tr>
-                <?php endif;
-                endforeach; ?>
-            </tbody>
             <tbody class=column_left>
                 <tr>
                     <td>
@@ -97,6 +77,25 @@
                     <?php if ($chamado->feito == null) :  ?>
                         <tr>
                             <td class="actions column_left"><?= $this->Number->format($chamado->id) ?>)
+                                <?= $this->Html->link(
+                                    h($chamado->titulo),
+                                    ['action' => 'edit', $chamado->id]
+                                ) ?>
+                            </td>
+                        </tr>
+                <?php endif;
+                endforeach; ?>
+            </tbody>
+            <tbody class=column_right>
+                <tr>
+                    <td>
+                        <h3>Feitos</h3>
+                    </td>
+                </tr>
+                <?php foreach ($chamados as $chamado) : ?>
+                    <?php if ($chamado->feito) :  ?>
+                        <tr>
+                            <td class="actions column_right"><?= $this->Number->format($chamado->id) ?>)
                                 <?= $this->Html->link(
                                     h($chamado->titulo),
                                     ['action' => 'edit', $chamado->id]
