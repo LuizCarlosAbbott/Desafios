@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ImgMediaCard from "../components/productCard";
 
 class Home extends Component {
   constructor(props) {
@@ -8,7 +9,20 @@ class Home extends Component {
   }
 
   render() {
-    return <h2>asdasd</h2>;
+    return (
+      <div>
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+        <ImgMediaCard imagem="/static/images/produto-01.jpeg" />
+      </div>
+    );
   }
 }
 
